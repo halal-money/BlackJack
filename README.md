@@ -1,6 +1,6 @@
 # BlackJack Project
 
-**Author(s)**: Nauryzbek Berdi and ...
+**Author(s)**: Nauryzbek Berdi and Mahmoud Leghlimi
 
 ---
 
@@ -16,7 +16,7 @@
 ## Milestone 1: Setup, Planning, Design
 
 1. Branch 1 name: berdin
-2. Branch 2 name: 
+2. Branch 2 name: Mahmoud
 
 ---
 
