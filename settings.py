@@ -1,5 +1,4 @@
 import pygame
-WINDOW_WIDTH = 1100
-WINDOW_HEIGHT = 600
-
-
+pygame.init()
+WINDOW_WIDTH = 1200
+WINDOW_HEIGHT = 800
