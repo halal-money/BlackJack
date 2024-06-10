@@ -9,7 +9,7 @@ class Screen:
         pygame.display.set_caption("BlackJack")
         self.pygame_icon = pygame.image.load('img/blackjack.png')
         pygame.display.set_icon(self.pygame_icon)
-        self.bg_image = pygame.image.load('img\desk.jpg')
+        self.bg_image = pygame.image.load('img/desk.jpg')
         self.bg_image = pygame.transform.scale(self.bg_image, (WINDOW_WIDTH, WINDOW_HEIGHT))
 
     def run(self):
