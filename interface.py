@@ -15,7 +15,6 @@ class Screen:
 
         self.start_button = Button()    # start btn
 
-        card = {}
 
     def run(self):
         run = True
