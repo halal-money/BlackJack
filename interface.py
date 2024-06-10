@@ -19,7 +19,8 @@ class Screen:
         run = True
         while run:
             self.screen.blit(self.bg_image, (0, 0))     # display bg img
-            self.screen.blit(self.start_button.button_size, self.start_button.rect)     # display start btn img
+            if self.start_button.run():     # display start btn img
+                print('Game Start')
             pygame.display.update()
 
             # quiting the game
