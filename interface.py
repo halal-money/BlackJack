@@ -33,16 +33,20 @@ class Screen:
         # alert
         self.alert = Alert()
         self.alert_start_time = None  # track when the alert starts
+        self.show_elements = True
 
     def run(self):
         run = True
         while run:
-            self.screen.blit(self.bg_image, (0, 0))     # display bg img
-            self.screen.blit(self.header_surface, self.header_rect)     # display header
-            self.screen.blit(self.icon_size, self.icon_rect)    # display game icon
-            if self.start_button.run():     # display start btn img
-                print('Game Start')
-                self.alert_start_time = time.time()
+            self.screen.blit(self.bg_image, (0, 0))  # display bg img
+
+            if self.show_elements:
+                self.screen.blit(self.header_surface, self.header_rect)  # display header
+                self.screen.blit(self.icon_size, self.icon_rect)    # display game icon
+                if self.start_button.run():     # display start btn img
+                    print('Game Start')
+                    self.alert_start_time = time.time()
+                    self.show_elements = False
 
             # Display alert if within 3 seconds of clicking the button
             if self.alert_start_time and time.time() - self.alert_start_time < 3:
