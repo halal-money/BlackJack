@@ -1,4 +1,6 @@
 import os
+import random
+
 import pygame
 
 ace = []
@@ -15,6 +17,7 @@ jack = []
 queen = []
 king = []
 
+# Opening and loading all picture files to variables
 for filename in os.listdir('img/all_cards'):
     if filename.startswith('ace_of_'):
         image = pygame.image.load(f"img/all_cards/{filename}")
@@ -55,6 +58,8 @@ for filename in os.listdir('img/all_cards'):
     elif filename.startswith('king_of_'):
         image = pygame.image.load(f"img/all_cards/{filename}")
         king.append(image)
+
+#list with all cards
 all_cards = [
     {'ace': ace},
     {'two': two},
@@ -70,4 +75,9 @@ all_cards = [
     {'queen': queen},
     {'king': king}
 ]
-print(all_cards)
+# Generating a random card
+x = random.choice(all_cards)
+y = list(x)
+z = ''.join(y)
+random_card = random.choice(x[z])
+print(random_card)
