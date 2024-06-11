@@ -2,3 +2,6 @@ import pygame
 pygame.init()
 WINDOW_WIDTH = 1200
 WINDOW_HEIGHT = 800
+
+ALERT_WIDTH = 600
+ALERT_HEIGHT = 400
