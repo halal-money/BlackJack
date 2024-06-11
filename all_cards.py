@@ -55,3 +55,19 @@ for filename in os.listdir('img/all_cards'):
     elif filename.startswith('king_of_'):
         image = pygame.image.load(f"img/all_cards/{filename}")
         king.append(image)
+all_cards = [
+    {'ace': ace},
+    {'two': two},
+    {'three': three},
+    {'four': four},
+    {'five': five},
+    {'six': six},
+    {'seven': seven},
+    {'eight': eight},
+    {'nine': nine},
+    {'ten': ten},
+    {'jack': jack},
+    {'queen': queen},
+    {'king': king}
+]
+print(all_cards)
