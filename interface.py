@@ -1,7 +1,9 @@
 import pygame.font
+import time
 
 from settings import *
 from start_button import Button
+from alert import Alert
 
 
 class Screen:
@@ -28,6 +30,10 @@ class Screen:
         self.icon_size = pygame.transform.scale(self.game_icon, (200, 150))
         self.icon_rect = self.icon_size.get_rect(center=(WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2))
 
+        # alert
+        self.alert = Alert()
+        self.alert_start_time = None  # track when the alert starts
+
     def run(self):
         run = True
         while run:
@@ -36,6 +42,14 @@ class Screen:
             self.screen.blit(self.icon_size, self.icon_rect)    # display game icon
             if self.start_button.run():     # display start btn img
                 print('Game Start')
+                self.alert_start_time = time.time()
+
+            # Display alert if within 3 seconds of clicking the button
+            if self.alert_start_time and time.time() - self.alert_start_time < 3:
+                self.alert.run()
+            else:
+                self.alert_start_time = None
+
             pygame.display.update()
 
             # quiting the game
