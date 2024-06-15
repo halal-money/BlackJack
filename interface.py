@@ -2,7 +2,7 @@ import pygame.font
 import time
 
 from settings import *
-from button import Button
+from button import Button, exitButton
 from alert import Alert
 from display_chips import Chips
 
@@ -19,6 +19,8 @@ class Screen:
         self.bg_image = pygame.transform.scale(pygame.image.load('img/desk.jpg'), (WINDOW_WIDTH, WINDOW_HEIGHT))
 
         self.start_button = Button(button=pygame.image.load('img/start_button.png'), btn_size=(250, 200), btn_rect=(320, 670))    # start btn
+
+        self.exit_button = exitButton()  # exit button
 
         # putting header
         self.font = pygame.font.SysFont('bald', 120)  # choosing a font and size
