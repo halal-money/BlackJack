@@ -2,10 +2,10 @@ from settings import *
 
 
 class Button:
-    def __init__(self):
-        self.button = pygame.image.load('img/start_button.png')     # start_btn img
-        self.button_size = pygame.transform.scale(self.button, (250, 200))  # changed the size of the start btn
-        self.rect = self.button_size.get_rect(bottomleft=(320, 670))
+    def __init__(self, button, btn_size, btn_rect):
+        self.button = button     # start_btn img
+        self.button_size = pygame.transform.scale(self.button, btn_size)  # changed the size of the start btn
+        self.rect = self.button_size.get_rect(bottomleft=btn_rect)
         self.surface = pygame.display.get_surface()
         self.clicked = False
 
