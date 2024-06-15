@@ -24,15 +24,9 @@ class Button:
 
         self.surface.blit(self.button_size, self.rect)
         return action
-class exitButton(Button): #exitButton class inherits from Button
+
+
+class ExitButton(Button):
     def __init__(self):
-        super().__init__()
-        self.button = pygame.image.load('exit.png')
-        self.button_size = pygame.transform.scale(self.button, (50, 50))
-        self.rect = self.button_size.get_rect(topright=(1200, 00))
-        self.surface = pygame.display.get_surface()
-        self.clicked = False
-
-    def exit_run(self):
-
-        super(exitButton, self).run()
+        button = pygame.image.load('img/exit.png')
+        super().__init__(button=button, btn_size=(50, 50), btn_rect=(1150, 60))
