@@ -1,6 +1,5 @@
 import pygame.font
 import time
-from sys import exit
 
 from settings import *
 from button import Button, ExitButton
@@ -21,6 +20,9 @@ class Screen:
 
         start_button = pygame.image.load('img/start_button.png')
         self.start_button = Button(button=start_button, btn_size=(250, 200), btn_rect=(320, 670))    # start btn
+
+        quit_button = pygame.image.load('img/quit.png')
+        self.quit_button = Button(button=quit_button, btn_size=(250, 200), btn_rect=(620, 670))    # quit btn
 
         self.exit_button = ExitButton()  # exit button
 
@@ -49,8 +51,7 @@ class Screen:
             self.screen.blit(self.bg_image, (0, 0))  # display bg img
 
             if self.exit_button.run():    # If ExitButton gets clicked
-                pygame.quit()     # Close window
-                exit()
+                run = False    # Close window
 
             if self.show_elements:
                 self.screen.blit(self.header_surface, self.header_rect)  # display header
@@ -58,6 +59,10 @@ class Screen:
                 if self.start_button.run():     # display start btn img
                     print('Game Start')
                     self.alert_start_time = time.time()
+
+                if self.quit_button.run():
+                    print('Game Over')
+                    run = False
 
             # Display alert if within 3 seconds of clicking the button
             if self.alert_start_time:
